@@ -1,0 +1,244 @@
+/* Estilos generales */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    /* margin-top: 45px; */
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Encabezado */
+.cabecera .titulo{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo{
+    background-color: #0C02C3;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+header {
+    background-color: black;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecera .logo img {
+    height: 100px;
+}
+.navegacion ul{
+    list-style: none;
+}
+
+.menu > li{
+    position: relative;
+    display: inline-block;
+}
+.menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    font-family: 'Open sans';
+    text-decoration: none;
+}
+.menu li a:hover{
+    color: #ce7d35;
+    transition: all .3s;
+}
+
+/* submenu*/
+.submenu{
+    position: absolute;
+    background: #333333;
+    width: max-content;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.submenu li a{
+    display: block;
+    width: 130%;
+    padding: 15px;
+    color: white;
+    font-family: 'Open sans';
+    text-decoration: none;
+}
+
+.menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*Submenusub*/
+
+.submenusub{
+    position: absolute;
+    background: #0073e6;
+    width: max-content;
+    opacity: 0;
+    transition: opacity 1.5s;
+    right: -140px;
+}
+
+.submenusub li a{
+    display: block;
+    width: 130%;
+    padding: 15px;
+    color: white;
+    font-family: 'Open sans';
+    text-decoration: none;
+}
+
+.submenu li:hover .submenusub, .menuitem:hover .submenusub{
+    visibility: visible;
+    opacity: 1;
+
+}
+.submenusub:hover .submenusub{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 52px auto;
+    overflow: hidden;
+    padding: 271px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+}
+
+.slide {
+    display: none; /* Inicialmente ocultamos todas las slides */
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+/* Estilos de los botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    user-select: none;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Para hacer que el slider sea responsivo */
+@media (max-width: 768px) {
+    .slider img {
+        max-height: 400px;
+    }
+}
+
+/* Sección de video */
+.video {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.video iframe {
+    max-width: 100%;
+    border: none;
+}
+
+/* Botones */
+.botones {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.botones button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botones button:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+}
